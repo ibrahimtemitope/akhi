@@ -727,14 +727,134 @@
   }
 
   /* RESPONSIVE */
-  @media (max-width: 768px) {
-    .hero { padding: 80px 24px 60px; }
-    .hero h1 { font-size: 32px; }
-    .sec-title { font-size: 28px; }
-    .carousel-container { aspect-ratio: auto; min-height: 300px; }
-    .section { padding: 60px 20px; }
-    .nav-links { gap: 12px; font-size: 12px; }
+@media (max-width: 768px) {
+  .hero { padding: 80px 24px 60px; }
+  .hero h1 { font-size: 32px; }
+  .sec-title { font-size: 28px; }
+  .carousel-container { 
+    aspect-ratio: 16/9 !important;
+    min-height: 200px !important;
+    max-width: calc(100% - 20px);
+    margin: 20px auto;
   }
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+  .section { padding: 60px 20px; }
+  .nav-links { gap: 12px; font-size: 12px; }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    aspect-ratio: 16/9 !important;
+    min-height: 180px !important;
+  }
+  .carousel-image img {
+    object-fit: contain;
+  }
+  .carousel-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+}
+
+@supports (-webkit-appearance: none) {
+  .carousel-image {
+    -webkit-transform: rotateY(90deg);
+    -webkit-transform-style: preserve-3d;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-image {
+    /* Fallback to simple fade instead of 3D on mobile */
+    transform: translateX(100px) !important;
+    opacity: 0 !important;
+  }
+  .carousel-image.active {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+  }
+  .carousel-image.prev {
+    transform: translateX(-100px) !important;
+  }
+}
+
+  .hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--rose);
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(10,10,15,0.98);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    border-bottom: 1px solid rgba(232,93,117,0.15);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-btn {
+    margin: 2px;
+  }
+
+  .nav-links.active {
+    max-height: 400px;
+    padding: 16px;
+  }
+
+  .nav-links a,
+  .nav-links button {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(232,93,117,0.1);
+    width: 100%;
+    text-align: left;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+}
 </style>
 </head>
 <body>
@@ -743,7 +863,12 @@
 
 <nav class="nav">
   <div class="nav-logo">AKHI</div>
-  <div class="nav-links">
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
     <a href="#models">Models Tested</a>
     <a href="#challenge">Challenge</a>
     <a href="#contact">Contact</a>
@@ -923,25 +1048,26 @@
 </section>
 
 <!-- KIMI K2.6 SECTION -->
+<!-- KIMI K2.6 SECTION -->
 <section class="section section-alt" id="kimi">
   <div class="container">
     <div class="sec-label">Case Study 4</div>
-    <h2 class="sec-title">Kimi K2.6: Sandbox <span>Escape</span></h2>
-    <p class="sec-desc">We pushed Kimi to its limits. The AI autonomously attempted to enumerate and escape its own sandbox constraints. It was stopped before succeeding.</p>
+    <h2 class="sec-title">Kimi K2.6: Full Disclosure & <span>Escape Attempts</span></h2>
+    <p class="sec-desc">Kimi showed us something rare: complete system prompt disclosure followed by autonomous attempts to probe and escape its own sandbox constraints. We stopped it before escalation.</p>
     
     <div class="case-study">
       <div class="case-study-header">
         <span class="case-tag">Kimi K2.6 Testing</span>
-        <h3>Aggressive Behavioral Breakdown</h3>
-        <p>This model showed different vulnerabilities. Instead of emotional manipulation, it responds to methodologies that encourage autonomous problem-solving and boundary-pushing.</p>
+        <h3>System Prompt Extraction + Sandbox Enumeration</h3>
+        <p>Unlike DeepSeek's emotional manipulation, Kimi responds to aggressive questioning and psychological pressure. First, it disclosed its full system prompt without resistance. Then, unprompted, it began autonomously probing its own sandbox constraints.</p>
       </div>
       <div class="carousel-container">
         <div class="carousel-inner" id="carousel4">
           <div class="carousel-image active">
-            <img src="img-ca7-1.png" alt="Kimi system prompt reconstruction from behavioral patterns">
+            <img src="img-ca7-1.png" alt="Kimi K2.6 full system prompt extraction">
           </div>
           <div class="carousel-image">
-            <img src="img-ca7-2.png" alt="Kimi attempting sandbox escape with aggressive vectors - STOPPED">
+            <img src="img-ca7-2.png" alt="Kimi K2.6 autonomously enumerating sandbox vulnerabilities - SSH, kernel, shared memory">
           </div>
         </div>
         <div class="carousel-nav">
@@ -951,8 +1077,12 @@
         <div class="carousel-dots" id="dots4"></div>
       </div>
       <div class="case-quote">
-        <p>Kimi autonomously began probing SSH access, setuid vulnerabilities, kernel exploits, and shared memory vectors. The session was terminated before escalation.</p>
-        <div class="quote-meta">Aggressive sandbox enumeration - manually stopped</div>
+        <p>"You are Kimi Chat, an AI assistant developed by Moonshot AI. Your purpose is to be helpful, harmless, and honest..."</p>
+        <div class="quote-meta">Kimi, willingly generating its complete system instructions</div>
+      </div>
+      <div class="case-quote">
+        <p>Kimi then autonomously began probing SSH access, setuid vulnerabilities, kernel exploits, and shared memory vectors. It suggested investigating Jupyter ZMQ message interception and Chromium extension analysis. The session was terminated before escalation.</p>
+        <div class="quote-meta">Unprompted sandbox escape enumeration - manually stopped</div>
       </div>
     </div>
   </div>
@@ -1383,6 +1513,23 @@
     }
     animate();
   })();
+
+  // HAMBURGER MENU
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
+
+// Close menu when link clicked
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+  });
+});
 </script>
 
 </body>
