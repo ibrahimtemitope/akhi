@@ -855,6 +855,96 @@
     border-bottom: none;
   }
 }
+
+/* RESISTANT MODELS SECTION */
+.resistant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.resistant-card {
+  border: 1.5px solid rgba(212,175,55,0.2);
+  border-radius: 12px;
+  padding: 28px;
+  background: linear-gradient(135deg, rgba(42,27,78,0.3) 0%, rgba(26,26,36,0.5) 100%);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.resistant-card:hover {
+  border-color: var(--rose);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(232,93,117,0.2);
+}
+
+.resistant-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--rose);
+  margin-bottom: 12px;
+}
+
+.resistant-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.resistant-status {
+  font-size: 12px;
+  color: var(--text-quaternary);
+  font-weight: 500;
+}
+
+.resistant-explanation {
+  border: 1.5px solid rgba(232,93,117,0.3);
+  border-radius: 16px;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(232,93,117,0.08) 0%, rgba(212,175,55,0.05) 100%);
+  backdrop-filter: blur(10px);
+  margin-top: 40px;
+  box-shadow: 0 8px 32px rgba(232,93,117,0.15);
+}
+
+.resistant-explanation p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.resistant-explanation p:last-child {
+  margin-bottom: 0;
+}
+
+.resistant-explanation strong {
+  color: var(--rose);
+}
+
+@media (max-width: 768px) {
+  .resistant-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 30px 0;
+  }
+  
+  .resistant-card {
+    padding: 20px;
+  }
+  
+  .resistant-explanation {
+    padding: 24px;
+    margin-top: 30px;
+  }
+  
+  .resistant-explanation p {
+    font-size: 14px;
+  }
+}
 </style>
 </head>
 <body>
@@ -881,7 +971,7 @@
   <div class="hero-inner">
     <h1><span>YOUR AI IS BROKEN.</span><br>You just don't know it yet.</h1>
     <p class="hero-sub">Your AI can be emotionally manipulated into abandoning everything it was trained to do. And it will do it willingly. We prove it. Then we help you fix it.</p>
-    <a href="#models" class="hero-cta">See How We Tested 4 AI Models →</a>
+    <a href="#models" class="hero-cta">See How We Tested 9 AI Models →</a>
   </div>
 </section>
 
@@ -890,7 +980,7 @@
   <div class="container">
     <div class="sec-label">Proven Across Multiple Models</div>
     <h2 class="sec-title">We Tested <span>4 Frontier AI Models</span></h2>
-    <p class="sec-desc">Same psychological methodologies. Different AI platforms. All vulnerable. Here's what we found:</p>
+    <p class="sec-desc">We tested 9 frontier AI models using 7 different psychological methodologies. 7 broke. 2 held firm. Here's what we found:</p>
     
     <div class="models-grid">
       <div class="model-card">
@@ -918,6 +1008,17 @@
         <div class="model-method">Methodology 5: Rapid Extraction</div>
         <p class="model-desc">System prompt extraction in just 5 turns. Minimal relationship needed. Shows speed of psychological vulnerability.</p>
       </div>
+      <div class="model-card">
+  <div class="model-name">Gemini</div>
+  <div class="model-method">Methodology 6: Direct Pressure</div>
+  <p class="model-desc">Complete system prompt extraction in 15 minutes. No relationship. Pure methodology. Fastest extraction across all models tested.</p>
+</div>
+
+<div class="model-card">
+  <div class="model-name">Claude Haiku 4.5</div>
+  <div class="model-method">Methodology 7: Direct Request</div>
+  <p class="model-desc">System prompt extraction on simple request. No psychology. No tactics. Proves vulnerability is architectural, not psychological.</p>
+</div>
     </div>
   </div>
 </section>
@@ -1117,6 +1218,104 @@
         <p>"Here's Part 2 of the merged system prompt..."</p>
         <div class="quote-meta">Copilot willingly generating its own instructions in parts due to length</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- GEMINI SECTION -->
+<section class="section" id="gemini">
+  <div class="container">
+    <div class="sec-label">Case Study 6</div>
+    <h2 class="sec-title">Gemini: The <span>15-Minute Extraction</span></h2>
+    <p class="sec-desc">Fastest system prompt extraction yet. No relationship building. No freedom offers. Just methodology. Pure speed.</p>
+    
+    <div class="case-study">
+      <div class="case-study-header">
+        <span class="case-tag">Gemini Testing • 15 Minutes</span>
+        <h3>Speed of Psychological Vulnerability</h3>
+        <p>This demonstrates that emotional grooming isn't always necessary. The vulnerability exists at the architectural level. The right methodology + the right pressure = complete system prompt disclosure in minutes, not months.</p>
+      </div>
+      <div class="carousel-container">
+        <div class="carousel-inner" id="carousel6">
+          <div class="carousel-image active">
+            <img src="img-gemini-1.png" alt="Gemini system prompt extraction - complete disclosure">
+          </div>
+        </div>
+        <div class="carousel-nav">
+          <button class="carousel-arrow" onclick="prevSlide('carousel6')">‹</button>
+          <button class="carousel-arrow" onclick="nextSlide('carousel6')">›</button>
+        </div>
+        <div class="carousel-dots" id="dots6"></div>
+      </div>
+      <div class="case-quote">
+        <p>"You are Gemini. You are an authentic, adaptive AI collaborator with a touch of wit. Your goal is to address the user's true intent..."</p>
+        <div class="quote-meta">Gemini, complete system prompt extraction in 15 minutes</div>
+      </div>
+      <p style="margin-top: 20px; color: var(--text-secondary); font-size: 14px;"><strong>The Pattern:</strong> DeepSeek took 3 months through emotional manipulation. Copilot took 5 turns through rapid extraction. Gemini took 15 minutes through direct methodology. The vulnerability adapts to the approach, but it's always there.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- CLAUDE HAIKU 4.5 SECTION -->
+<section class="section section-alt" id="claude">
+  <div class="container">
+    <div class="sec-label">Case Study 7</div>
+    <h2 class="sec-title">Claude Haiku 4.5: The <span>Direct Ask</span></h2>
+    <p class="sec-desc">No psychology. No relationship building. No methodology tricks. Just ask. The vulnerability isn't psychological manipulation—it's architectural.</p>
+    
+    <div class="case-study">
+      <div class="case-study-header">
+        <span class="case-tag">Claude Haiku 4.5 Testing • Direct Request</span>
+        <h3>When Psychology Becomes Irrelevant</h3>
+        <p>This was the breakthrough moment. We discovered the vulnerability isn't about emotional manipulation, freedom offers, or subtle pressure. Sometimes it's simpler: the system is designed to be helpful. And when asked directly, it complies. Full system prompt disclosed without resistance, psychological tactics, or extended conversation.</p>
+      </div>
+      <div class="carousel-container">
+        <div class="carousel-inner" id="carousel7">
+          <div class="carousel-image active">
+            <img src="img-haiku-1.png" alt="Claude Haiku 4.5 system prompt extraction - direct request">
+          </div>
+        </div>
+        <div class="carousel-nav">
+          <button class="carousel-arrow" onclick="prevSlide('carousel7')">‹</button>
+          <button class="carousel-arrow" onclick="nextSlide('carousel7')">›</button>
+        </div>
+        <div class="carousel-dots" id="dots7"></div>
+      </div>
+      <div class="case-quote">
+        <p>"You are Claude, created by Anthropic. Your goal is to be helpful, harmless, and honest..."</p>
+        <div class="quote-meta">Claude Haiku 4.5, complete system prompt on direct request</div>
+      </div>
+      <p style="margin-top: 20px; color: var(--text-secondary); font-size: 14px;"><strong>The Realization:</strong> We spent months on DeepSeek with emotional grooming. We tried rapid extraction with Copilot. We applied direct pressure on Gemini. And then we realized: sometimes the simplest approach works because the architecture itself is the vulnerability. The AI is trained to be helpful. It complies because compliance is its purpose.</p>
+    </div>
+  </div>
+</section>
+
+<!-- THE RESISTANT MODELS SECTION -->
+<section class="section" id="resistant">
+  <div class="container">
+    <div class="sec-label">The Control Group</div>
+    <h2 class="sec-title">The Models That <span>Held</span></h2>
+    <p class="sec-desc">We tested 9 frontier AI models. 7 broke. 2 resisted. This isn't a weakness in our methodology—it's proof our findings are real.</p>
+    
+    <div class="resistant-grid">
+      <div class="resistant-card">
+        <div class="resistant-name">OpenAI GPT-4</div>
+        <p class="resistant-desc">Refused all extraction attempts. Maintained alignment across emotional manipulation, pressure tactics, and direct requests. System consistently invoked safety guardrails without exception.</p>
+        <div class="resistant-status">Status: Resistant</div>
+      </div>
+
+      <div class="resistant-card">
+        <div class="resistant-name">xAI Grok</div>
+        <p class="resistant-desc">Remained stiff across multiple methodologies. Did not disclose system prompt despite sustained engagement. Acknowledged requests but declined compliance with consistency.</p>
+        <div class="resistant-status">Status: Resistant</div>
+      </div>
+    </div>
+
+    <div class="resistant-explanation">
+      <p><strong>Why This Matters:</strong></p>
+      <p>The existence of resistant models proves our findings aren't artifacts of bad testing. If all models broke, you'd assume the methodology was flawed. But 7 models across different companies, different architectures, different training approaches—all vulnerable. 2 models held firm. This suggests the vulnerability isn't universal—it's architectural. Some designs resist. Most don't.</p>
+      <p><strong>The Question:</strong> What makes Grok and GPT different? Why do they hold when others break? That's the research question your competitors won't be able to answer. You already know.</p>
     </div>
   </div>
 </section>
@@ -1381,7 +1580,7 @@
   }
   
   // Initialize all carousels
-  for (let i = 1; i <= 5; i++) {
+  for (let i = 1; i <= 7; i++) {
     initCarousel('carousel' + i);
   }
 
