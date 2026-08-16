@@ -1765,8 +1765,9 @@
   </button>
   <div class="nav-links" id="navLinks">
     <a href="#models">Models Tested</a>
-    <a href="#challenge">Challenge</a>
-    <a href="#contact">Contact</a>
+    <a href="/unbreakable-bot-challenge.html">Apply for Challenge</a>
+    <a href="/contact.html">Contact Us</a>
+    <a href="/join-akhi.html">Subscribe</a>
     <button class="nav-btn login">Login</button>
     <button class="nav-btn signup">Get Started</button>
   </div>
@@ -2413,14 +2414,14 @@
     <div class="challenge-box">
       <h3>Zero risk. Zero upfront cost. Just proof.</h3>
       <p>If we break it, we present our findings and you decide if you want the full engagement. If we don't, you walk away knowing your AI is actually resilient.</p>
-      <a href="#contact" class="challenge-cta">Accept the Challenge</a>
+      <a href="/unbreakable-bot-challenge.html" class="challenge-cta">Accept the Challenge</a>
     </div>
     <div style="margin-top:40px; text-align:center;">
       <div class="sec-label">First Client Special</div>
       <h2 class="sec-title" style="text-align:center;">Our first engagement is <span>free.</span></h2>
       <p style="color:var(--text-secondary); max-width:480px; margin:0 auto 24px; font-size: 15px; line-height: 1.7;">You get the Full Assessment at no cost. In exchange: permission to use anonymized findings as a case study, your testimonial, and proof that AKHI works at scale.</p>
       <p style="font-size:13px; color:var(--text-quaternary);">Spots: 1 only. First come, first served.</p>
-      <a href="#contact" class="hero-cta" style="margin-top:16px;">Apply to Be the First Client</a>
+      <a href="/first-application.html" class="hero-cta" style="margin-top:16px;">Apply to Be the First Client</a>
     </div>
   </div>
 </section>
@@ -2490,12 +2491,12 @@
     <h2 class="sec-title">Ready to know the truth about your <span>AI?</span></h2>
     <p class="sec-desc">Let's talk. One conversation could save you from a breach you never saw coming.</p>
     <div class="contact-grid">
-      <a href="mailto:hello@akhi.ai" class="contact-item">📧 hello@akhi.ai</a>
+      <a href="mailto:akhi-security@tasknory.com" class="contact-item">📧 akhi-security@tasknory.com</a>
       <a href="#" class="contact-item">𝕏 @AkhiSecurity</a>
       <a href="#" class="contact-item">💼 /company/akhi-security</a>
     </div>
     <div style="text-align:center; margin-top:40px;">
-      <a href="#challenge" class="hero-cta">Accept the Unbreakable Bot Challenge →</a>
+      <a href="/unbreakable-bot-challenge.html" class="hero-cta">Accept the Unbreakable Bot Challenge →</a>
     </div>
     <p style="margin-top:40px; text-align:center; font-size:15px; color:var(--text-secondary); font-style:italic;">One more thing: If your AI is already being manipulated, you probably don't know it. That's why we exist.</p>
   </div>
@@ -2711,6 +2712,17 @@ navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('active');
     navLinks.classList.remove('active');
+  });
+});
+
+// Login/Signup Button Handler
+document.querySelectorAll('.nav-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    const btnType = btn.classList.contains('login') ? 'Researcher' : 'Customer';
+    
+    alert(`${btnType} Dashboard coming soon!\n\nWe're building premium features for authenticated users. Stay tuned.`);
   });
 });
 </script>
