@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="faviconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E85D75"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#45A29E"/>
+    </linearGradient>
+  </defs>
+
+
+  
+  <circle cx="32" cy="32" r="28" fill="none" stroke="url(#faviconGrad)" stroke-width="1" opacity="0.3"/>
+  <circle cx="32" cy="32" r="22" fill="none" stroke="url(#faviconGrad)" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="32" cy="32" r="16" fill="none" stroke="url(#faviconGrad)" stroke-width="2" opacity="0.65"/>
+  <circle cx="32" cy="32" r="10" fill="none" stroke="url(#faviconGrad)" stroke-width="2" opacity="0.8"/>
+  <circle cx="32" cy="32" r="5" fill="url(#faviconGrad)" opacity="0.95"/>
+</svg>

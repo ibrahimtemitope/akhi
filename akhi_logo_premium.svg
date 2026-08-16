@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="premiumGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E85D75"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#45A29E"/>
+    </linearGradient>
+    
+    <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E85D75"/>
+      <stop offset="100%" stop-color="#45A29E"/>
+    </linearGradient>
+    
+    <filter id="premiumGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="innerGlow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <radialGradient id="centerGradient">
+      <stop offset="0%" stop-color="#E85D75" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.8"/>
+    </radialGradient>
+  </defs>
+
+
+
+  <!-- Outer glow circle (faintest) -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="url(#premiumGradient)" stroke-width="1.5" opacity="0.15" filter="url(#premiumGlow)"/>
+  
+  <!-- Layer 6 (very faint) -->
+  <circle cx="256" cy="256" r="190" fill="none" stroke="url(#premiumGradient)" stroke-width="2" opacity="0.22"/>
+  
+  <!-- Layer 5 (subtle) -->
+  <circle cx="256" cy="256" r="160" fill="none" stroke="url(#premiumGradient)" stroke-width="2.5" opacity="0.32"/>
+  
+  <!-- Layer 4 (visible) -->
+  <circle cx="256" cy="256" r="130" fill="none" stroke="url(#premiumGradient)" stroke-width="3" opacity="0.45" filter="url(#innerGlow)"/>
+  
+  <!-- Layer 3 (prominent) -->
+  <circle cx="256" cy="256" r="100" fill="none" stroke="url(#premiumGradient)" stroke-width="3.5" opacity="0.6"/>
+  
+  <!-- Layer 2 (strong) -->
+  <circle cx="256" cy="256" r="70" fill="none" stroke="url(#premiumGradient)" stroke-width="4" opacity="0.75" filter="url(#innerGlow)"/>
+  
+  <!-- Layer 1 (inner) -->
+  <circle cx="256" cy="256" r="40" fill="none" stroke="url(#premiumGradient)" stroke-width="4.5" opacity="0.9"/>
+  
+  <!-- Center core (solid) -->
+  <circle cx="256" cy="256" r="18" fill="url(#centerGradient)" opacity="0.95" filter="url(#innerGlow)"/>
+  
+  <!-- Subtle cross (psychology/insight intersection) -->
+  <line x1="256" y1="220" x2="256" y2="292" stroke="url(#glowGradient)" stroke-width="1.5" opacity="0.2"/>
+  <line x1="220" y1="256" x2="292" y2="256" stroke="url(#glowGradient)" stroke-width="1.5" opacity="0.2"/>
+</svg>

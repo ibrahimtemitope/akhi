@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AKHI — Psychological AI Security</title>
+<link rel="icon" type="image/x-icon" href="/akhi_favicon.svg">
 <style>
   :root {
     --rose: #E85D75;
@@ -1735,6 +1736,17 @@
     font-size: 14px !important;
   }
 }
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-logo > img {
+  width: 32px;
+  margin: 0 auto;
+}
 </style>
 </head>
 <body>
@@ -1742,7 +1754,10 @@
 <canvas id="bg-canvas"></canvas>
 
 <nav class="nav">
-  <div class="nav-logo">AKHI</div>
+  <div class="nav-logo">
+    <img src="/akhi_logo_premium.svg" alt="AKHI Logo">
+    <p class="logo-text">AKHI</p>
+  </div>
   <button class="hamburger" id="hamburger">
     <span></span>
     <span></span>
