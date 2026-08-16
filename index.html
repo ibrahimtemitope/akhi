@@ -1747,6 +1747,42 @@
   width: 32px;
   margin: 0 auto;
 }
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 20px;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--rose) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: slideDown 0.8s ease-out;
+  text-shadow: 0 0 30px rgba(232,93,117,0.2);
+  -webkit-text-stroke: 0.5px rgba(232,93,117,0.1);
+}
+
+.hero h1 span {
+  color: var(--rose);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+    letter-spacing: -0.3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 24px;
+    letter-spacing: 0;
+    font-weight: 700;
+  }
+}
 </style>
 </head>
 <body>
