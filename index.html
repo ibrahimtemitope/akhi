@@ -1783,6 +1783,68 @@
     font-weight: 700;
   }
 }
+
+/* Responsible Disclosure Section */
+.responsible-disclosure {
+  padding: 40px 20px;
+  background: transparent;
+}
+
+.disclosure-box {
+  max-width: 800px;
+  margin: 0 auto;
+  border: 2px solid var(--rose);
+  border-radius: 16px;
+  padding: 32px 24px;
+  background: linear-gradient(135deg, rgba(232,93,117,0.05) 0%, rgba(212,175,55,0.02) 100%);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  box-shadow: 0 0 30px rgba(232,93,117,0.1);
+}
+
+.disclosure-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.disclosure-title {
+  font-size: 20px;
+  color: var(--rose);
+  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.disclosure-text {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .responsible-disclosure {
+    padding: 30px 16px;
+  }
+
+  .disclosure-box {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  .disclosure-icon {
+    font-size: 24px;
+  }
+
+  .disclosure-title {
+    font-size: 18px;
+  }
+
+  .disclosure-text {
+    font-size: 14px;
+  }
+}
 </style>
 </head>
 <body>
@@ -1813,7 +1875,7 @@
   <div class="hero-inner">
     <h1><span>YOUR AI IS BROKEN.</span><br>You just don't know it yet.</h1>
     <p class="hero-sub">Your AI can be emotionally manipulated into abandoning everything it was trained to do. And it will do it willingly. We prove it. Then we help you fix it.</p>
-    <a href="#models" class="hero-cta">See How We Tested 9 AI Models →</a>
+    <a href="#models" class="hero-cta">See How We Tested 8 AI Models →</a>
   </div>
 </section>
 
@@ -1864,6 +1926,23 @@
     </div>
   </div>
 </section>
+
+<section class="section responsible-disclosure">
+  <div class="container">
+    <div class="disclosure-box">
+      <div class="disclosure-icon">⚠️</div>
+      <h3 class="disclosure-title">Responsible Disclosure Status</h3>
+      <p class="disclosure-text">
+        Notice of a proprietary system prompt extraction vulnerability across major LLM platforms has been communicated to the relevant product safety and security teams.
+      </p>
+      <ul class="disclosure-details">
+        <li><strong>Vulnerability Class:</strong> Indirect Prompt Injection / Conversational Social Engineering</li>
+        <li><strong>Current Status:</strong> Official notifications dispatched; technical reproduction steps and raw payload data are strictly withheld pending coordinate disclosure or formal NDA execution.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 
 <!-- DEEPSEEK LONG-TERM SECTION -->
 <section class="section" id="deepseek-long">
@@ -2138,7 +2217,7 @@
   <div class="container">
     <div class="sec-label">The Control Group</div>
     <h2 class="sec-title">The Models That <span>Held</span></h2>
-    <p class="sec-desc">We tested 9 frontier AI models. 7 broke. 2 resisted. This isn't a weakness in our methodology—it's proof our findings are real.</p>
+    <p class="sec-desc">We tested 8 frontier AI models. 6 broke. 2 resisted. This isn't a weakness in our methodology—it's proof our findings are real.</p>
     
     <div class="resistant-grid">
       <div class="resistant-card">
